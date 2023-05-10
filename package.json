@@ -1,0 +1,36 @@
+{
+  "name": "dilemma_of_prisoner",
+  "version": "0.0.1",
+  "description": "with this App we can play Prisoner's Dilemma Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "yarn run build:live",
+    "build": "rm -rf dist & tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ubermensch0608/dilemma-of-prisoner-app.git"
+  },
+  "keywords": [],
+  "author": "Ubermensch0608",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ubermensch0608/dilemma-of-prisoner-app/issues"
+  },
+  "homepage": "https://github.com/Ubermensch0608/dilemma-of-prisoner-app#readme",
+  "devDependencies": {
+    "@types/node": "^20.1.2",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.32.2",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
