@@ -21,4 +21,17 @@ if (canGameStart) {
 }
 Joey.sayOkayToMatch();
 
-console.log(centerGameSet);
+const gameRules = James.tellGameRules();
+
+Dean.listenGameRules(gameRules);
+Joey.listenGameRules(gameRules);
+
+Dean.setStrategy("Cooperation");
+Joey.setStrategy("Cooperation");
+
+James.checkStrategy(centerGameSet);
+const winner = James.openWinner();
+
+console.log(winner, "winner");
+
+// console.log(centerGameSet);

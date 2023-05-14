@@ -1,4 +1,5 @@
 import Dealer from "./Dealer";
+import Strategy, { StrategyStatus } from "./Strategy";
 
 export class Person {
   private name: string;
@@ -8,12 +9,14 @@ export class Person {
 }
 
 class Player extends Person {
-  private okayToMatch;
+  private okayToMatch: boolean;
+  private gameStrategy: StrategyStatus | undefined;
+  private gameRules: string | undefined;
+
   constructor(name: string) {
     super(name);
     this.okayToMatch = false;
   }
-  askTableToSit() {}
 
   public sayOkayToMatch() {
     this.okayToMatch = true;
@@ -21,6 +24,22 @@ class Player extends Person {
 
   public checkIsOkayToMatch() {
     return this.okayToMatch;
+  }
+
+  public listenGameRules(newGameRules: string) {
+    this.gameRules = newGameRules;
+  }
+
+  public thinkGameRules() {
+    return this.gameRules || "아직 습득한 게임 룰이 없습니다.";
+  }
+
+  public setStrategy(newStrategy: StrategyStatus) {
+    this.gameStrategy = newStrategy;
+  }
+
+  public showOwnStrategy() {
+    return this.gameStrategy;
   }
 }
 

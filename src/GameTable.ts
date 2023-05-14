@@ -51,6 +51,13 @@ class GameTable {
   public confirmGameStart() {
     this.status = "Matching";
   }
+
+  public openPlayersStrategies() {
+    return {
+      player1Strategy: this.player1?.showOwnStrategy(),
+      player2Strategy: this.player2?.showOwnStrategy(),
+    };
+  }
 }
 
 export default GameTable;
